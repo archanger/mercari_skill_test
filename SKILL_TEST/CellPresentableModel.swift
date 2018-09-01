@@ -9,5 +9,19 @@
 import UIKit
 
 protocol CellPresentableModel {
+    static var nib: UINib { get }
+    static var cellIdentifier: String { get }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+}
+
+extension CellPresentableModel {
+    static var nib: UINib {
+        return UINib(nibName: cellIdentifier, bundle: nil)
+    }
+}
+
+extension UITableView {
+    func registerNib<Model: CellPresentableModel>(of modelType: Model.Type) {
+        register(Model.nib, forCellReuseIdentifier: Model.cellIdentifier)
+    }
 }

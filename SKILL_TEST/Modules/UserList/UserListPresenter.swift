@@ -28,6 +28,7 @@ final class UserListPresenter: NSObject {
 extension UserListPresenter: UserListViewSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        router.openChat()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,7 +44,8 @@ extension UserListPresenter: UserListViewSource {
 
 extension UserListPresenter: UserListPresenterProtocol {
     func dataLoaded(users: [UserEntity]) {
-        fetchedUsers = users
+        //TODO: implement more intellectual logic to calculate diff or something to prevent data duplication
+        fetchedUsers.append(contentsOf: users)
         DispatchQueue.main.async {
             self.view?.reloadData()
         }

@@ -23,8 +23,10 @@ extension UserlListCellModel {
 }
 
 extension UserlListCellModel: CellPresentableModel {
+    static var cellIdentifier: String = "UserListCell"
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserListCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: type(of: self).cellIdentifier, for: indexPath)
         if let url = avatarURL {
             do {
                 cell.imageView?.image = UIImage(data: try Data(contentsOf: url))

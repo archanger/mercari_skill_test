@@ -25,6 +25,13 @@
 		EDD34D8E213AD88500C449DE /* UserListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D8D213AD88500C449DE /* UserListRouter.swift */; };
 		EDD34D93213AD94800C449DE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D91213AD94800C449DE /* ChatViewController.swift */; };
 		EDD34D94213AD94800C449DE /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD34D92213AD94800C449DE /* ChatViewController.xib */; };
+		EDD34D96213AE45200C449DE /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D95213AE45200C449DE /* ChatService.swift */; };
+		EDD34D99213AE97C00C449DE /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D97213AE97C00C449DE /* MyTableViewCell.swift */; };
+		EDD34D9A213AE97C00C449DE /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD34D98213AE97C00C449DE /* MyTableViewCell.xib */; };
+		EDD34D9D213AE98B00C449DE /* OtherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D9B213AE98B00C449DE /* OtherTableViewCell.swift */; };
+		EDD34D9E213AE98B00C449DE /* OtherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD34D9C213AE98B00C449DE /* OtherTableViewCell.xib */; };
+		EDD34DA1213AECF900C449DE /* MyTableViewCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34DA0213AECF900C449DE /* MyTableViewCell+Model.swift */; };
+		EDD34DA3213AEE3800C449DE /* OtherTableViewCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34DA2213AEE3800C449DE /* OtherTableViewCell+Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +55,13 @@
 		EDD34D8D213AD88500C449DE /* UserListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRouter.swift; sourceTree = "<group>"; };
 		EDD34D91213AD94800C449DE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		EDD34D92213AD94800C449DE /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		EDD34D95213AE45200C449DE /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		EDD34D97213AE97C00C449DE /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		EDD34D98213AE97C00C449DE /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		EDD34D9B213AE98B00C449DE /* OtherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTableViewCell.swift; sourceTree = "<group>"; };
+		EDD34D9C213AE98B00C449DE /* OtherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherTableViewCell.xib; sourceTree = "<group>"; };
+		EDD34DA0213AECF900C449DE /* MyTableViewCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyTableViewCell+Model.swift"; sourceTree = "<group>"; };
+		EDD34DA2213AEE3800C449DE /* OtherTableViewCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OtherTableViewCell+Model.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +126,10 @@
 		EDD34D8F213AD91000C449DE /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				EDD34D9F213AECD800C449DE /* Cells */,
 				EDD34D91213AD94800C449DE /* ChatViewController.swift */,
 				EDD34D92213AD94800C449DE /* ChatViewController.xib */,
+				EDD34D95213AE45200C449DE /* ChatService.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -125,6 +141,19 @@
 				EDD34D6C213ABB6600C449DE /* UserList */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		EDD34D9F213AECD800C449DE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EDD34DA0213AECF900C449DE /* MyTableViewCell+Model.swift */,
+				EDD34D97213AE97C00C449DE /* MyTableViewCell.swift */,
+				EDD34D98213AE97C00C449DE /* MyTableViewCell.xib */,
+				EDD34DA2213AEE3800C449DE /* OtherTableViewCell+Model.swift */,
+				EDD34D9B213AE98B00C449DE /* OtherTableViewCell.swift */,
+				EDD34D9C213AE98B00C449DE /* OtherTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +214,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDD34D9E213AE98B00C449DE /* OtherTableViewCell.xib in Resources */,
+				EDD34D9A213AE97C00C449DE /* MyTableViewCell.xib in Resources */,
 				EDD34D65213AB5BF00C449DE /* LaunchScreen.storyboard in Resources */,
 				EDD34D81213ACC9A00C449DE /* UserListViewController.xib in Resources */,
 				EDD34D94213AD94800C449DE /* ChatViewController.xib in Resources */,
@@ -207,7 +238,12 @@
 				EDD34D88213ACFB100C449DE /* UserListFactory.swift in Sources */,
 				EDD34D76213ABE3E00C449DE /* UserService.swift in Sources */,
 				EDD34D78213ABE8100C449DE /* UserEntity.swift in Sources */,
+				EDD34D96213AE45200C449DE /* ChatService.swift in Sources */,
+				EDD34DA1213AECF900C449DE /* MyTableViewCell+Model.swift in Sources */,
+				EDD34D99213AE97C00C449DE /* MyTableViewCell.swift in Sources */,
+				EDD34D9D213AE98B00C449DE /* OtherTableViewCell.swift in Sources */,
 				EDD34D84213ACF5D00C449DE /* Errors.swift in Sources */,
+				EDD34DA3213AEE3800C449DE /* OtherTableViewCell+Model.swift in Sources */,
 				EDD34D7B213AC6C300C449DE /* CellPresentableModel.swift in Sources */,
 				EDD34D93213AD94800C449DE /* ChatViewController.swift in Sources */,
 				EDD34D58213AB5BD00C449DE /* AppDelegate.swift in Sources */,

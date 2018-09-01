@@ -9,13 +9,20 @@
 import UIKit
 
 protocol UserListRouterProtocol {
-    
+    func openChat()
 }
 
 final class UserListRouter {
+    private var rootViewController: UIViewController
     
+    init(rootViewController: UIViewController) {
+        self.rootViewController = rootViewController
+    }
 }
 
 extension UserListRouter: UserListRouterProtocol {
-    
+    func openChat() {
+        let viewController = ChatViewController()
+        rootViewController.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
