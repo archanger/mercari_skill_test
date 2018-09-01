@@ -39,6 +39,7 @@ class UserListViewController: UIViewController {
         
         interactor?.loadData()
         
+        //TODO: Refactor to custom cell
         tableview.register(UITableViewCell.self, forCellReuseIdentifier: "UserListCell")
         
     }

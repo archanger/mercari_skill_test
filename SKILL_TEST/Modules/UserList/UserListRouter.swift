@@ -9,7 +9,7 @@
 import UIKit
 
 protocol UserListRouterProtocol {
-    func openChat()
+    func openChat(with buddy: UserEntity)
 }
 
 final class UserListRouter {
@@ -21,8 +21,8 @@ final class UserListRouter {
 }
 
 extension UserListRouter: UserListRouterProtocol {
-    func openChat() {
-        let viewController = ChatViewController()
+    func openChat(with buddy: UserEntity) {
+        let viewController = ChatFactory().create(with: buddy)
         rootViewController.navigationController?.pushViewController(viewController, animated: true)
     }
 }

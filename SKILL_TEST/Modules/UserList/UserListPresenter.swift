@@ -28,7 +28,8 @@ final class UserListPresenter: NSObject {
 extension UserListPresenter: UserListViewSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        router.openChat()
+        let buddy = fetchedUsers[indexPath.row]
+        router.openChat(with: buddy)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

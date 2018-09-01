@@ -8,11 +8,4 @@
 
 import UIKit
 
-class OtherTableViewCell: UITableViewCell {
-
-    @IBOutlet private var messageText: UILabel!
-    
-    func setText(_ text: String) {
-        messageText.text = text
-    }
-}
+class OtherTableViewCell: BaseMessageCell { }

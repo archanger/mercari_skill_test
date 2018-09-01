@@ -20,6 +20,10 @@ class MessageEntity {
     }
 }
 
+protocol ChatServiceProtocol {
+    func getMessages(for userId: Int, completion: @escaping ([MessageEntity]) -> Void)
+}
+
 final class ChatService {
     
     private static var RFC3339DateFormatter: DateFormatter = {
@@ -42,3 +46,5 @@ final class ChatService {
     }
     
 }
+
+extension ChatService: ChatServiceProtocol { }

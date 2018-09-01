@@ -21,7 +21,7 @@ extension CellPresentableModel {
 }
 
 extension UITableView {
-    func registerNib<Model: CellPresentableModel>(of modelType: Model.Type) {
-        register(Model.nib, forCellReuseIdentifier: Model.cellIdentifier)
+    func registerNib(of modelType: CellPresentableModel.Type) {
+        register(modelType.nib, forCellReuseIdentifier: modelType.cellIdentifier)
     }
 }

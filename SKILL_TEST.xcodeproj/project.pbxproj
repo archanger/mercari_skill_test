@@ -32,6 +32,10 @@
 		EDD34D9E213AE98B00C449DE /* OtherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD34D9C213AE98B00C449DE /* OtherTableViewCell.xib */; };
 		EDD34DA1213AECF900C449DE /* MyTableViewCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34DA0213AECF900C449DE /* MyTableViewCell+Model.swift */; };
 		EDD34DA3213AEE3800C449DE /* OtherTableViewCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34DA2213AEE3800C449DE /* OtherTableViewCell+Model.swift */; };
+		EDD34DA5213AF1CE00C449DE /* BaseMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34DA4213AF1CE00C449DE /* BaseMessageCell.swift */; };
+		EDD34DA7213AF2CA00C449DE /* ChatFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34DA6213AF2CA00C449DE /* ChatFactory.swift */; };
+		EDD34DA9213AF38B00C449DE /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34DA8213AF38B00C449DE /* ChatInteractor.swift */; };
+		EDD34DAB213AF54B00C449DE /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34DAA213AF54B00C449DE /* ChatPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,10 @@
 		EDD34D9C213AE98B00C449DE /* OtherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherTableViewCell.xib; sourceTree = "<group>"; };
 		EDD34DA0213AECF900C449DE /* MyTableViewCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyTableViewCell+Model.swift"; sourceTree = "<group>"; };
 		EDD34DA2213AEE3800C449DE /* OtherTableViewCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OtherTableViewCell+Model.swift"; sourceTree = "<group>"; };
+		EDD34DA4213AF1CE00C449DE /* BaseMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMessageCell.swift; sourceTree = "<group>"; };
+		EDD34DA6213AF2CA00C449DE /* ChatFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFactory.swift; sourceTree = "<group>"; };
+		EDD34DA8213AF38B00C449DE /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
+		EDD34DAA213AF54B00C449DE /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,9 @@
 				EDD34D91213AD94800C449DE /* ChatViewController.swift */,
 				EDD34D92213AD94800C449DE /* ChatViewController.xib */,
 				EDD34D95213AE45200C449DE /* ChatService.swift */,
+				EDD34DA6213AF2CA00C449DE /* ChatFactory.swift */,
+				EDD34DA8213AF38B00C449DE /* ChatInteractor.swift */,
+				EDD34DAA213AF54B00C449DE /* ChatPresenter.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -146,6 +157,7 @@
 		EDD34D9F213AECD800C449DE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EDD34DA4213AF1CE00C449DE /* BaseMessageCell.swift */,
 				EDD34DA0213AECF900C449DE /* MyTableViewCell+Model.swift */,
 				EDD34D97213AE97C00C449DE /* MyTableViewCell.swift */,
 				EDD34D98213AE97C00C449DE /* MyTableViewCell.xib */,
@@ -233,11 +245,15 @@
 				EDD34D86213ACF8D00C449DE /* Result.swift in Sources */,
 				EDD34D8C213AD37700C449DE /* UserListPresenter.swift in Sources */,
 				EDD34D8A213AD15D00C449DE /* UserListInteractor.swift in Sources */,
+				EDD34DAB213AF54B00C449DE /* ChatPresenter.swift in Sources */,
 				EDD34D80213ACC9A00C449DE /* UserListViewController.swift in Sources */,
+				EDD34DA7213AF2CA00C449DE /* ChatFactory.swift in Sources */,
+				EDD34DA5213AF1CE00C449DE /* BaseMessageCell.swift in Sources */,
 				EDD34D60213AB5BD00C449DE /* SKILL_TEST.xcdatamodeld in Sources */,
 				EDD34D88213ACFB100C449DE /* UserListFactory.swift in Sources */,
 				EDD34D76213ABE3E00C449DE /* UserService.swift in Sources */,
 				EDD34D78213ABE8100C449DE /* UserEntity.swift in Sources */,
+				EDD34DA9213AF38B00C449DE /* ChatInteractor.swift in Sources */,
 				EDD34D96213AE45200C449DE /* ChatService.swift in Sources */,
 				EDD34DA1213AECF900C449DE /* MyTableViewCell+Model.swift in Sources */,
 				EDD34D99213AE97C00C449DE /* MyTableViewCell.swift in Sources */,

@@ -9,9 +9,7 @@
 import UIKit
 
 extension OtherTableViewCell {
-    struct Model {
-        let message: String
-    }
+    class Model: BaseMessageModel { }
 }
 
 extension OtherTableViewCell.Model: CellPresentableModel {
