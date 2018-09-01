@@ -8,36 +8,15 @@
 
 import Foundation
 
-enum Result<TSuccess, TFailure> {
-    case success(TSuccess)
-    case failure(TFailure)
-}
-
-struct LimitError {
-    let message: String
-    let documentationURL: String
-}
-
-extension LimitError: Decodable {
-    private enum CodingKeys: String, CodingKey {
-        case message
-        case documentation_url
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        message = try container.decode(String.self, forKey: .message)
-        documentationURL = try container.decode(String.self, forKey: .documentation_url)
-    }
-}
-
-enum ResponseError: Error {
-    case somethingWentWrong(String)
-    case limitHasReached(LimitError)
+protocol UserServiceProtocol {
+    func getUsers(startingFrom lastUserId: Int?, completion: @escaping (Result<[UserEntity], ResponseError>) -> Void)
 }
 
 final class UserService {
     
+}
+
+extension UserService: UserServiceProtocol {
     func getUsers(startingFrom lastUserId: Int?, completion: @escaping (Result<[UserEntity], ResponseError>) -> Void) {
         let entrypoint = "https://api.github.com/users"
         var urlComponents = URLComponents(string: entrypoint)

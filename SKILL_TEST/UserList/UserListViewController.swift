@@ -8,11 +8,25 @@
 
 import UIKit
 
+protocol UserListViewSource: UITableViewDataSource, UITableViewDelegate { }
+
+protocol UserListViewProtocol: class {
+    func reloadData()
+    func showMessage(_ message: String)
+}
+
 class UserListViewController: UIViewController {
-    @IBOutlet private var tableview: UITableView!
+    var interactor: UserListInteractorProtocol?
+    weak var source: UserListViewSource? {
+        didSet {
+            if tableview != nil {
+                tableview.delegate = source
+                tableview.dataSource = source
+            }
+        }
+    }
     
-    private let userService = UserService()
-    private var fetchedUsers = [UserEntity]()
+    @IBOutlet private var tableview: UITableView!
     
     
     override func viewDidLoad() {
@@ -20,44 +34,22 @@ class UserListViewController: UIViewController {
         
         title = "Twitter DM"
         navigationController?.navigationBar.prefersLargeTitles = true
+        tableview.dataSource = source
+        tableview.delegate = source
         
-        tableview.dataSource = self
-        tableview.delegate = self
+        interactor?.loadData()
+        
         tableview.register(UITableViewCell.self, forCellReuseIdentifier: "UserListCell")
         
-        userService.getUsers(startingFrom: nil) { result in
-            switch result {
-            case .success(let users):
-                self.fetchedUsers = users
-            case .failure(let error):
-                switch error {
-                case .limitHasReached(let limitError):
-                    print(limitError.message)
-                case .somethingWentWrong(let error):
-                    print(error)
-                }
-            }
-            DispatchQueue.main.async {            
-                self.tableview.reloadData()
-            }
-        }
     }
 }
 
-extension UserListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedUsers.count
+extension UserListViewController: UserListViewProtocol {
+    func reloadData() {
+        tableview.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let entity = fetchedUsers[indexPath.row]
-        let cellModel = UserlListCellModel(from: entity)
-        return cellModel.tableView(tableView, cellForRowAt: indexPath)
-    }
-}
-
-extension UserListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func showMessage(_ message: String) {
+        //TODO: Show alert
     }
 }

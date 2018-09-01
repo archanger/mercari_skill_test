@@ -17,6 +17,11 @@
 		EDD34D7B213AC6C300C449DE /* CellPresentableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D7A213AC6C300C449DE /* CellPresentableModel.swift */; };
 		EDD34D80213ACC9A00C449DE /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D7E213ACC9A00C449DE /* UserListViewController.swift */; };
 		EDD34D81213ACC9A00C449DE /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD34D7F213ACC9A00C449DE /* UserListViewController.xib */; };
+		EDD34D84213ACF5D00C449DE /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D83213ACF5D00C449DE /* Errors.swift */; };
+		EDD34D86213ACF8D00C449DE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D85213ACF8D00C449DE /* Result.swift */; };
+		EDD34D88213ACFB100C449DE /* UserListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D87213ACFB100C449DE /* UserListFactory.swift */; };
+		EDD34D8A213AD15D00C449DE /* UserListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D89213AD15D00C449DE /* UserListInteractor.swift */; };
+		EDD34D8C213AD37700C449DE /* UserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D8B213AD37700C449DE /* UserListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		EDD34D7A213AC6C300C449DE /* CellPresentableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresentableModel.swift; sourceTree = "<group>"; };
 		EDD34D7E213ACC9A00C449DE /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		EDD34D7F213ACC9A00C449DE /* UserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListViewController.xib; sourceTree = "<group>"; };
+		EDD34D83213ACF5D00C449DE /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		EDD34D85213ACF8D00C449DE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		EDD34D87213ACFB100C449DE /* UserListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListFactory.swift; sourceTree = "<group>"; };
+		EDD34D89213AD15D00C449DE /* UserListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListInteractor.swift; sourceTree = "<group>"; };
+		EDD34D8B213AD37700C449DE /* UserListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +80,9 @@
 				EDD34D63213AB5BF00C449DE /* LaunchScreen.storyboard */,
 				EDD34D66213AB5BF00C449DE /* Info.plist */,
 				EDD34D5E213AB5BD00C449DE /* SKILL_TEST.xcdatamodeld */,
+				EDD34D83213ACF5D00C449DE /* Errors.swift */,
 				EDD34D7A213AC6C300C449DE /* CellPresentableModel.swift */,
+				EDD34D85213ACF8D00C449DE /* Result.swift */,
 			);
 			path = SKILL_TEST;
 			sourceTree = "<group>";
@@ -79,10 +91,13 @@
 			isa = PBXGroup;
 			children = (
 				EDD34D73213ABDD200C449DE /* UserlListCellModel.swift */,
+				EDD34D89213AD15D00C449DE /* UserListInteractor.swift */,
+				EDD34D8B213AD37700C449DE /* UserListPresenter.swift */,
+				EDD34D7E213ACC9A00C449DE /* UserListViewController.swift */,
 				EDD34D75213ABE3E00C449DE /* UserService.swift */,
 				EDD34D77213ABE8100C449DE /* UserEntity.swift */,
-				EDD34D7E213ACC9A00C449DE /* UserListViewController.swift */,
 				EDD34D7F213ACC9A00C449DE /* UserListViewController.xib */,
+				EDD34D87213ACFB100C449DE /* UserListFactory.swift */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -158,10 +173,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDD34D86213ACF8D00C449DE /* Result.swift in Sources */,
+				EDD34D8C213AD37700C449DE /* UserListPresenter.swift in Sources */,
+				EDD34D8A213AD15D00C449DE /* UserListInteractor.swift in Sources */,
 				EDD34D80213ACC9A00C449DE /* UserListViewController.swift in Sources */,
 				EDD34D60213AB5BD00C449DE /* SKILL_TEST.xcdatamodeld in Sources */,
+				EDD34D88213ACFB100C449DE /* UserListFactory.swift in Sources */,
 				EDD34D76213ABE3E00C449DE /* UserService.swift in Sources */,
 				EDD34D78213ABE8100C449DE /* UserEntity.swift in Sources */,
+				EDD34D84213ACF5D00C449DE /* Errors.swift in Sources */,
 				EDD34D7B213AC6C300C449DE /* CellPresentableModel.swift in Sources */,
 				EDD34D58213AB5BD00C449DE /* AppDelegate.swift in Sources */,
 				EDD34D74213ABDD200C449DE /* UserlListCellModel.swift in Sources */,
