@@ -17,7 +17,12 @@ protocol UserListPresenterProtocol: class {
 final class UserListPresenter: NSObject {
     weak var view: UserListViewProtocol?
     
+    private var router: UserListRouterProtocol
     private var fetchedUsers: [UserEntity] = []
+    
+    init(router: UserListRouterProtocol) {
+        self.router = router
+    }
 }
 
 extension UserListPresenter: UserListViewSource {

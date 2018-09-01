@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserEntity.swift
 //  SKILL_TEST
 //
 //  Created by Кирилл Чуянов on 01.09.2018.

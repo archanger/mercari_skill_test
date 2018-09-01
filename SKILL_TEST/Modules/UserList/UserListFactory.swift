@@ -15,7 +15,7 @@ final class UserListFactory {
         let viewController = UserListViewController()
         let service = UserService()
         let interactor = UserListInteractor(userService: service)
-        let presenter = UserListPresenter()
+        let presenter = UserListPresenter(router: UserListRouter())
         
         viewController.interactor = interactor
         viewController.source = presenter

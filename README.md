@@ -2,3 +2,4 @@
 
 * Localization
 * Pretty smooth image loading (in background thread)
+* Tests

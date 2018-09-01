@@ -22,6 +22,9 @@
 		EDD34D88213ACFB100C449DE /* UserListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D87213ACFB100C449DE /* UserListFactory.swift */; };
 		EDD34D8A213AD15D00C449DE /* UserListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D89213AD15D00C449DE /* UserListInteractor.swift */; };
 		EDD34D8C213AD37700C449DE /* UserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D8B213AD37700C449DE /* UserListPresenter.swift */; };
+		EDD34D8E213AD88500C449DE /* UserListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D8D213AD88500C449DE /* UserListRouter.swift */; };
+		EDD34D93213AD94800C449DE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD34D91213AD94800C449DE /* ChatViewController.swift */; };
+		EDD34D94213AD94800C449DE /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD34D92213AD94800C449DE /* ChatViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		EDD34D87213ACFB100C449DE /* UserListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListFactory.swift; sourceTree = "<group>"; };
 		EDD34D89213AD15D00C449DE /* UserListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListInteractor.swift; sourceTree = "<group>"; };
 		EDD34D8B213AD37700C449DE /* UserListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPresenter.swift; sourceTree = "<group>"; };
+		EDD34D8D213AD88500C449DE /* UserListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRouter.swift; sourceTree = "<group>"; };
+		EDD34D91213AD94800C449DE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		EDD34D92213AD94800C449DE /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +80,7 @@
 		EDD34D56213AB5BD00C449DE /* SKILL_TEST */ = {
 			isa = PBXGroup;
 			children = (
-				EDD34D6C213ABB6600C449DE /* UserList */,
+				EDD34D90213AD92800C449DE /* Modules */,
 				EDD34D57213AB5BD00C449DE /* AppDelegate.swift */,
 				EDD34D61213AB5BF00C449DE /* Assets.xcassets */,
 				EDD34D63213AB5BF00C449DE /* LaunchScreen.storyboard */,
@@ -98,8 +104,27 @@
 				EDD34D77213ABE8100C449DE /* UserEntity.swift */,
 				EDD34D7F213ACC9A00C449DE /* UserListViewController.xib */,
 				EDD34D87213ACFB100C449DE /* UserListFactory.swift */,
+				EDD34D8D213AD88500C449DE /* UserListRouter.swift */,
 			);
 			path = UserList;
+			sourceTree = "<group>";
+		};
+		EDD34D8F213AD91000C449DE /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				EDD34D91213AD94800C449DE /* ChatViewController.swift */,
+				EDD34D92213AD94800C449DE /* ChatViewController.xib */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		EDD34D90213AD92800C449DE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EDD34D8F213AD91000C449DE /* Chat */,
+				EDD34D6C213ABB6600C449DE /* UserList */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +187,7 @@
 			files = (
 				EDD34D65213AB5BF00C449DE /* LaunchScreen.storyboard in Resources */,
 				EDD34D81213ACC9A00C449DE /* UserListViewController.xib in Resources */,
+				EDD34D94213AD94800C449DE /* ChatViewController.xib in Resources */,
 				EDD34D62213AB5BF00C449DE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,8 +209,10 @@
 				EDD34D78213ABE8100C449DE /* UserEntity.swift in Sources */,
 				EDD34D84213ACF5D00C449DE /* Errors.swift in Sources */,
 				EDD34D7B213AC6C300C449DE /* CellPresentableModel.swift in Sources */,
+				EDD34D93213AD94800C449DE /* ChatViewController.swift in Sources */,
 				EDD34D58213AB5BD00C449DE /* AppDelegate.swift in Sources */,
 				EDD34D74213ABDD200C449DE /* UserlListCellModel.swift in Sources */,
+				EDD34D8E213AD88500C449DE /* UserListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

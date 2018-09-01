@@ -12,6 +12,7 @@ protocol UserServiceProtocol {
     func getUsers(startingFrom lastUserId: Int?, completion: @escaping (Result<[UserEntity], ResponseError>) -> Void)
 }
 
+//TODO: Shoud inject somekind of network provider
 final class UserService {
     
 }
