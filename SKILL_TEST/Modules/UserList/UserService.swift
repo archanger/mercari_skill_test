@@ -40,10 +40,15 @@ extension UserService: UserServiceProtocol {
                 completion(.failure(.somethingWentWrong(error?.localizedDescription ?? "")))
                 return
             }
-            if let httpUrlResponse = response as? HTTPURLResponse {
-                let remainingRateLimit = httpUrlResponse.allHeaderFields["X-RateLimit-Remaining"]
-                let responseCode = httpUrlResponse.statusCode
-                //TODO: Test limmits
+            if let httpUrlResponse = response as? HTTPURLResponse, httpUrlResponse.statusCode == 403 {
+                if let remainingRateLimit = httpUrlResponse.allHeaderFields["X-RateLimit-Remaining"] as? String, remainingRateLimit == "0" {
+                    do {
+                        let limitError = try JSONDecoder().decode(LimitError.self, from: data)
+                        completion(.failure(.limitHasReached(limitError)))
+                    } catch {
+                        completion(.failure(.somethingWentWrong(error.localizedDescription)))
+                    }
+                }
             }
             
             do {

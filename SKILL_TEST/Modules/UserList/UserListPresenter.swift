@@ -53,10 +53,10 @@ extension UserListPresenter: UserListPresenterProtocol {
     }
     
     func loadFailed(_ errorMessage: String) {
-        
+        view?.showMessage(nil, body: errorMessage)
     }
     
     func loadFailed(_ error: LimitError) {
-        
+        view?.showMessage("Limit has reached", body: error.message)
     }
 }

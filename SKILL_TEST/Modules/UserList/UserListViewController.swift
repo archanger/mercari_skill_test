@@ -12,7 +12,7 @@ protocol UserListViewSource: UITableViewDataSource, UITableViewDelegate { }
 
 protocol UserListViewProtocol: class {
     func reloadData()
-    func showMessage(_ message: String)
+    func showMessage(_ title: String?, body: String)
 }
 
 class UserListViewController: UIViewController {
@@ -50,7 +50,12 @@ extension UserListViewController: UserListViewProtocol {
         tableview.reloadData()
     }
     
-    func showMessage(_ message: String) {
-        //TODO: Show alert
+    func showMessage(_ title: String?, body: String) {
+        let alert = UIAlertController(title: title, message: body, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
+            self.interactor?.loadData()
+        }))
+        present(alert, animated: true, completion: nil)
     }
 }
