@@ -10,6 +10,7 @@ import Foundation
 
 protocol ChatInteractorProtocol {
     func loadData()
+    func sendMessage(_ message: String)
 }
 
 final class ChatInteractor {
@@ -18,19 +19,48 @@ final class ChatInteractor {
     
     private var chatService: ChatServiceProtocol
     private var buddy: UserEntity
+    private var subscription: Subscription!
     
     init(chatService: ChatServiceProtocol, buddy: UserEntity) {
         self.chatService = chatService
         self.buddy = buddy
+        
+        subscription = chatService.subscribe({ [weak self] (action, payload) in
+            switch action {
+            case .sended:
+                if let message = payload as? MessageEntity {
+                    self?.handleSended(message)
+                }
+            case .allMessageReceived:
+                if let messages = payload as? [MessageEntity] {
+                    self?.handleReceivedAll(messages)
+                }
+            }
+        })
     }
     
+    deinit {
+        if (subscription != nil) {
+            chatService.removeSubscription(subscription)
+        }
+    }
+    
+    private func handleSended(_ message: MessageEntity) {
+        presenter?.gotNewMessage(message)
+    }
+    
+    private func handleReceivedAll(_ messages: [MessageEntity]) {
+        presenter?.loadedInitialMessages(messages)
+    }
 }
 
 extension ChatInteractor: ChatInteractorProtocol {
     func loadData() {
         presenter?.loginReceived(buddy.login)
-        chatService.getMessages(for: buddy.id) { [weak self] messages in
-            self?.presenter?.loadedInitialMessages(messages)
-        }
+        chatService.getMessages(for: buddy.id)
+    }
+    
+    func sendMessage(_ message: String) {
+        chatService.sendMessage(message, to: buddy.id)
     }
 }

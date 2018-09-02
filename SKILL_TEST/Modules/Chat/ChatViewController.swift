@@ -13,6 +13,7 @@ protocol ChatViewSource: UITableViewDelegate, UITableViewDataSource { }
 protocol ChatViewProtocol: class {
     func setTitle(_ title: String)
     func reloadData()
+    func insert(indexes: [IndexPath])
     func registerModels(_ models: [CellPresentableModel.Type])
 }
 
@@ -34,6 +35,7 @@ class ChatViewController: UIViewController {
     var interactor: ChatInteractorProtocol?
     
     @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var textField: UITextField!
     private var fetchedMessages: [MessageEntity] = []
     
     override func viewDidLoad() {
@@ -48,6 +50,13 @@ class ChatViewController: UIViewController {
         configurator?.readyToConfigure()
         interactor?.loadData()
     }
+    
+    @IBAction private func send(_ sender: UIButton) {
+        if let message = textField.text {
+            interactor?.sendMessage(message)
+            textField.text = nil
+        }
+    }
 }
 
 extension ChatViewController: ChatViewProtocol {
@@ -57,6 +66,16 @@ extension ChatViewController: ChatViewProtocol {
     
     func reloadData() {
         tableView.reloadData()
+    }
+    
+    func insert(indexes: [IndexPath]) {
+        tableView.beginUpdates()
+        tableView.insertRows(at: indexes, with: .bottom)
+        tableView.endUpdates()
+        
+        if let lastPath = indexes.last {
+            tableView.scrollToRow(at: lastPath, at: .bottom, animated: true)
+        }
     }
     
     func registerModels(_ models: [CellPresentableModel.Type]) {

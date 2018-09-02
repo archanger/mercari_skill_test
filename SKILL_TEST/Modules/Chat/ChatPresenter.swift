@@ -10,6 +10,7 @@ import UIKit
 
 protocol ChatPresenterProtocol {
     func loadedInitialMessages(_ messages: [MessageEntity])
+    func gotNewMessage(_ message: MessageEntity)
     func loginReceived(_ userLogin: String)
 }
 
@@ -36,6 +37,13 @@ extension ChatPresenter: ChatPresenterProtocol {
     
     func loginReceived(_ userLogin: String) {
         view?.setTitle("@\(userLogin)")
+    }
+    
+    func gotNewMessage(_ message: MessageEntity) {
+        let newIndexPath = IndexPath(row: fetchedMessages.count, section: 0)
+        fetchedMessages.append(message)
+        view?.insert(indexes: [newIndexPath])
+        
     }
 }
 

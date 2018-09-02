@@ -13,7 +13,7 @@ final class ChatFactory {
     func create(with buddy: UserEntity) -> UIViewController {
         
         let viewController = ChatViewController()
-        let chatService = ChatService()
+        let chatService = FakeChatService()
         let interactor = ChatInteractor(chatService: chatService, buddy: buddy)
         let presenter = ChatPresenter()
         
