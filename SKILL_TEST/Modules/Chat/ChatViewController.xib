@@ -40,7 +40,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.94117647058823528" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="RK6-RR-Zn6" firstAttribute="bottom" secondItem="Xbu-r6-vdJ" secondAttribute="bottom" constant="16" id="7WU-V8-ToZ"/>
                         <constraint firstItem="CLx-5R-aUH" firstAttribute="leading" secondItem="Xbu-r6-vdJ" secondAttribute="trailing" constant="8" symbolic="YES" id="AgQ-GA-DUT"/>
